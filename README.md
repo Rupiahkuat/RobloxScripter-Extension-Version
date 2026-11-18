@@ -15,27 +15,25 @@ Giving an AI direct control over Roblox Studio usually ends in broken maps or de
 * **⚡ 32 Specialized Tools (5x Less Token Usage):** Includes `project_snapshot`, `script_outline`, line-range reading, partial find/replace (`edit_script`), themed UI builder (`create_gui`), raycast object scatterer, and an automatic project/backdoor auditor (`verify`).
 * **🤖 Autonomous Playtest & Self-Debugging:** Launch an automated `playtest` via `StudioTestService`, capture Server/Client Output errors in real time, and let the AI patch its own bugs in a loop.
 * **🔒 Local Security & Backdoor Scanner:** Uses cryptographic session tokens (`X-RS-Token`), strict `Host`/`Origin` anti-DNS-rebinding checks, automatic script stripping on Toolbox assets, and a built-in malicious pattern scanner.
-* **📦 Zero-Dependency Setup:** Runs on plain Node.js 16+ with 1-click Auto-Pairing from the local dashboard (`http://127.0.0.1:3030`).
+* **📦 1-Click Automated Installer (`install.bat`):** Zero `npm` or Python dependencies—just double-click `install.bat` to install the plugin, launch the bridge server, and open the pairing dashboard automatically.
 
 ---
 
-### ⚡ 3-Step Quick Setup
+### ⚡ 2-Step Quick Setup (Windows)
 
-#### 1. Install the Studio Plugin
-* Copy `plugin/RobloxScripterBridge.server.lua` into your local plugins folder:
-  * **Windows:** `%LOCALAPPDATA%\Roblox\Plugins\`
-  * *(Or open it as a Script in Studio, right-click > **Save as Local Plugin...**)*
-* Open **Plugins > RobloxScripter** in Studio and click **Allow** when prompted for HTTP access to `127.0.0.1:3030`.
+*(Prerequisite: Make sure [Node.js 16+](https://nodejs.org) is installed on your PC.)*
 
-#### 2. Start the Bridge Server (Zero Dependencies)
-* Make sure [Node.js 16+](https://nodejs.org) is installed.
-* Open a terminal inside the `server/` folder and run:
-  ```bash
-  node server.js
-  ```
-* Open `http://127.0.0` in your browser and click **Connect** to auto-pair with Roblox Studio in one click.
+#### 1. Run the 1-Click Installer (`install.bat`)
+* Extract the downloaded folder and double-click **`install.bat`**.
+* It will **automatically**:
+  1. Copy the plugin into your Roblox Studio `Plugins` folder.
+  2. Start the local bridge server (`127.0.0.1:3030`).
+  3. Open the **RobloxScripter Dashboard** in your browser.
+* Click **Connect** on the dashboard, then open **Plugins > RobloxScripter** in Studio and click **Allow** when prompted for HTTP access.
 
-#### 3. Load the Browser Extension
+*(Note for macOS/Linux users: Manually copy `plugin/RobloxScripterBridge.server.lua` to your Roblox Plugins folder and run `node server/server.js --open`.)*
+
+#### 2. Load the Browser Extension
 * Open `chrome://extensions` (Chrome) or `edge://extensions` (Edge).
 * Turn on **Developer mode** (top right).
 * Click **Load unpacked** and select the `extension/` folder.
